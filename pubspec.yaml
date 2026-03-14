@@ -1,0 +1,60 @@
+name: curriculo_de_bolso
+description: App mobile para criação e compartilhamento de currículo digital.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Ícones padrão iOS
+  cupertino_icons: ^1.0.8
+
+  # Gerenciamento de estado
+  flutter_riverpod: ^3.3.1
+
+  # Navegação moderna
+  go_router: ^17.1.0
+
+  # SVG support
+  flutter_svg: ^2.2.4
+
+  # Fontes Google
+  google_fonts: ^8.0.2
+
+  # Formatação de datas e textos
+  intl: ^0.20.2
+
+  # Selecionar imagem da galeria ou câmera
+  image_picker: ^1.2.1
+
+  # Gerar PDF
+  pdf: ^3.11.3
+
+  # Compartilhar / imprimir PDF
+  printing: ^5.14.2
+
+  # Acesso a diretórios do sistema
+  path_provider: ^2.1.5
+
+  # Gerar QR Code
+  qr_flutter: ^4.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Regras de lint recomendadas
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Assets do projeto
+  assets:
+    - assets/img/
+    - assets/icons/
