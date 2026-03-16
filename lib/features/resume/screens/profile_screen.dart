@@ -91,7 +91,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
 
                                 SizedBox(width: 12),
 
-                                ContactButton(),
+                                ContactButton(label: null, value: '', icon: null,),
                               ],
                             ),
                           ),

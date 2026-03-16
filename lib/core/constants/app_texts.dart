@@ -29,4 +29,12 @@ class AppTexts {
   static const String projects = "Projetos";
   static const String contact = "Contato";
 
+  static get email => "pedrpioola25@gmail.com";
+
+  static get phone => "(99)99999-9999";
+
+  static get birth => "23/10/1996";
+
+  static String get share => "Compartilhar";
+
 }

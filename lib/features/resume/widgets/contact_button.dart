@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:curriculo_de_bolso/core/constants/app_icons.dart';
 
 class ContactButton extends StatelessWidget {
-  const ContactButton({super.key});
+  const ContactButton({super.key, required label, required String value, required icon});
 
   @override
   Widget build(BuildContext context) {

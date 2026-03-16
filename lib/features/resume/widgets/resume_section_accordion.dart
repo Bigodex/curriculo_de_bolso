@@ -34,7 +34,7 @@ class _ResumeSectionAccordionState extends State<ResumeSectionAccordion> {
         color: const Color(0xFF111111),
         borderRadius: BorderRadius.circular(18),
         border: Border.all(
-          color: Colors.white10,
+          color: Colors.transparent,
         ),
       ),
       child: Column(
