@@ -5,16 +5,16 @@
 // Utiliza ShellRoute para manter o menu inferior fixo.
 // =======================================================
 
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
 
 // =======================================================
 // SCREENS
 // =======================================================
 
-import '../features/resume/screens/home_screen.dart';
+import '../features/resume/screens/profile_screen.dart';
 import '../features/resume/screens/create_resume_screen.dart';
-
+import '../features/resume/screens/card_screen.dart';
 
 // =======================================================
 // BOTTOM NAV UI
@@ -22,6 +22,15 @@ import '../features/resume/screens/create_resume_screen.dart';
 
 import 'app_bottom_nav.dart';
 
+// =======================================================
+// NAVIGATOR KEYS
+// =======================================================
+
+final GlobalKey<NavigatorState> _rootNavigatorKey =
+    GlobalKey<NavigatorState>();
+
+final GlobalKey<NavigatorState> _shellNavigatorKey =
+    GlobalKey<NavigatorState>();
 
 // =======================================================
 // ROUTER
@@ -29,12 +38,13 @@ import 'app_bottom_nav.dart';
 
 final GoRouter appRouter = GoRouter(
 
+  navigatorKey: _rootNavigatorKey,
+
   // -----------------------------------------------------
   // ROTA INICIAL
   // -----------------------------------------------------
 
-  initialLocation: '/',
-
+  initialLocation: '/card',
 
   // -----------------------------------------------------
   // ROTAS
@@ -44,38 +54,42 @@ final GoRouter appRouter = GoRouter(
 
     ShellRoute(
 
-      // -------------------------------------------------
-      // WRAPPER DO MENU
-      // -------------------------------------------------
+      navigatorKey: _shellNavigatorKey,
 
       builder: (context, state, child) {
-
-        return AppBottomNav(
-          child: child,
-        );
+        return AppBottomNav(child: child);
       },
 
       routes: [
 
         // -----------------------------------------------
-        // HOME
+        // CARTEIRINHA
         // -----------------------------------------------
 
         GoRoute(
-          path: '/',
-          name: 'home',
-          builder: (context, state) => const HomeScreen(),
+          path: '/card',
+          name: 'card',
+          builder: (context, state) => const CardScreen(),
         ),
 
-
         // -----------------------------------------------
-        // CRIAR CURRÍCULO
+        // ADICIONAR CURRÍCULO
         // -----------------------------------------------
 
         GoRoute(
           path: '/create',
           name: 'create',
           builder: (context, state) => const CreateResumeScreen(),
+        ),
+
+        // -----------------------------------------------
+        // PROFILE
+        // -----------------------------------------------
+
+        GoRoute(
+          path: '/profile',
+          name: 'profile',
+          builder: (context, state) => const ProfileScreen(),
         ),
 
       ],
